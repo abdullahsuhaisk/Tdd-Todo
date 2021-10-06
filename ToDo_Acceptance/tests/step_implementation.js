@@ -64,7 +64,7 @@ step("Clear all tasks", async function () {
 });
 
 step("Open todo application", async function () {
-    await goto("http://localhost:8000/");
+    await goto("http://localhost:3000/");
 });
 
 step("Must not have <table>", async function (table) {
