@@ -25,6 +25,12 @@ describe('Check all TODO elements exist', () => {
     expect(addTodoItemElement).toBeInTheDocument();
   });
 
+  test('renders empty todo list', () => {
+    render(<App />);
+    const todoListItem = screen.findAllByRole('list')
+    expect(todoListItem).toBeEmptyDOMElement;
+  });
+
   test('press todo button', async () => {
     render(<App />);
     const addTodoItemElement = screen.getByRole('button')
