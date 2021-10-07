@@ -90,11 +90,6 @@ step("Must have <table>", async function (table) {
     }
 });
 
-// step("Empty <Todo> list", async function (Todo) {
-//     var listElement = await $(Todo).elements().length
-//     assert.ok(listElement, 0)
-// });
-
 step("I write <arg0> to <arg1> and click to <arg2>", async function(arg0, arg1, arg2) {
     await write(arg0, into(textBox()));
     await click(button(arg2));
