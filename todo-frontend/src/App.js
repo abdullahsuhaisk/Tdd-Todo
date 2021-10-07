@@ -9,6 +9,7 @@ function App() {
 
   // console.log(todo)
   function handleClick() {
+    setTodoList([...todoList,todo])
     setTodo('')
   }
   return (
@@ -19,7 +20,7 @@ function App() {
           <h3>TODOS</h3>
           <div className="Todo-input">
             <input placeholder="add todo" type="text" id="todo-add" onChange={(e) => { setTodo(e.target.value) }} value={todo} />
-            <button onClick={() => handleClick()}>Add todo</button>
+            <button onClick={() => handleClick()} id="addButton">Add todo</button>
           </div>
           <ul className="Todo-list" id="Todo">
             {todoList.length > 0 ? todoList.map(todoItem => {
