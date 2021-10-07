@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event';
 
 import App from './App';
 
-describe('Check hole TODO', () => {
+describe('Check all TODO elements exist', () => {
   test('renders todo header', () => {
     render(<App />);
-    const headerElemen = screen.getByText('TODOS');
-    expect(headerElemen).toBeInTheDocument();
+    const headerElement = screen.getByText('TODOS');
+    expect(headerElement).toBeInTheDocument();
     // Todo Header
     // Input exist
     // Button Exist
