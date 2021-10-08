@@ -16,6 +16,18 @@ button {
   height: 56px;
   font-size: inherit;
 }
+
+ul {
+  list-style: none;
+}
+
+.Todo-spinner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

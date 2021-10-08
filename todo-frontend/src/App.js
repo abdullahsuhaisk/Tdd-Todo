@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
+import ClockLoader from 'react-spinners/ClockLoader'
 
 function App() {
   const [todo, setTodo] = useState('');
@@ -34,7 +35,7 @@ function App() {
           <h3>TODOS</h3>
           <div className="Todo-input">
             <input placeholder="add todo" type="text" id="todo-add" onChange={(e) => { setTodo(e.target.value) }} value={todo} />
-            {!loading ? <button onClick={() => handleClick()} id="addButton">Add todo</button>: null}
+            {!loading ? <button onClick={() => handleClick()} id="addButton">Add todo</button>: <div className="Todo-spinner"><ClockLoader color={"#61dafb"} loading={loading} /> </div>}
           </div>
           <ul className="Todo-list" id="Todo">
             {todoList.length > 0 ? todoList.map(todoItem => {
