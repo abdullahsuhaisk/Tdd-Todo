@@ -26,6 +26,14 @@ it('returns 404 when add todo request is get', (done) => {
   })
 })
 
+// // UPDATE TODO
+// it('returns 404 when delete todo request is get', (done) => {
+//   request(app).get('/todo').then((response) => {
+//     expect(response.status).toBe(404)
+//     done()
+//   })
+// })
+
 // CHECK ADD TODO
 it('returns success message  when add todo is valid', (done) => {
   request(app).post('/todo').send({
