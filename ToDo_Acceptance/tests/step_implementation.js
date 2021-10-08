@@ -19,7 +19,9 @@ const {
     textBox,
     evaluate,
     button,
-    $
+    $,
+    alert,
+    accept
 } = require('taiko');
 const assert = require("assert");
 const headless = process.env.headless_chrome.toLowerCase() === 'true';
@@ -91,9 +93,11 @@ step("Must have <table>", async function (table) {
     }
 });
 
-step("I write <arg0> to <arg1> and click to <arg2>", async function(arg0, arg1, arg2) {
+step("I write <arg0> to <arg1> and click to <arg2>", async function (arg0, arg1, arg2) {
     await write(arg0, into(textBox()));
-    await click(button({id:arg2}));
+    alert('todo added your todo is : buy some milk', async () => await accept())
+    await click(button({ id: arg2 }));
+
 });
 
 
@@ -104,7 +108,7 @@ step("I should see <arg0> item in <arg1> list", async function(arg0, arg1) {
 step("Empty <arg0> list", async function(arg0) {
     // var listElement = await $(arg0).elements().length
     var listElement = await listItem({id:arg0})
-    console.log(listElement)
+    // console.log(listElement)
 
     assert.ok(listElement.exists, false)
 });
