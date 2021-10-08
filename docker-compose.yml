@@ -23,6 +23,16 @@ services:
             - /todo-backend/node_modules
         networks:
             - webappnetwork
+    acceptance:
+        image: acceptance
+        restart: always
+        ports:
+            - "3002:3002"
+        volumes:
+            - ./acceptance:/todo-backend
+            - /acceptance/node_modules
+        networks:
+            - webappnetwork
 networks:
     webappnetwork:
         driver: bridge
