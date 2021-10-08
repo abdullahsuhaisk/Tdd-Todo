@@ -13,7 +13,7 @@ function App() {
     setLoading(true)
     try {
       const response = await axios.post('http://localhost:3001/todo', { todo: todoParam })
-      const { data: {id, message} } = response
+      const { data: { id, message } } = response
       alert(`${message} your todo is : ${todo}`)
       setLoading(false)
     } catch (error) {
@@ -24,7 +24,7 @@ function App() {
   // console.log(todo)
   function handleClick() {
     addTodoBackend(todo)
-    setTodoList([...todoList,todo])
+    setTodoList([...todoList, todo])
     setTodo('')
   }
   return (
@@ -35,7 +35,9 @@ function App() {
           <h3>TODOS</h3>
           <div className="Todo-input">
             <input placeholder="add todo" type="text" id="todo-add" onChange={(e) => { setTodo(e.target.value) }} value={todo} />
-            {!loading ? <button onClick={() => handleClick()} id="addButton">Add todo</button>: <div className="Todo-spinner"><ClockLoader color={"#61dafb"} loading={loading} /> </div>}
+            <div className="margin-left">
+              {!loading ? <button onClick={() => handleClick()} id="addButton">Add todo</button> : <div className="Todo-spinner"><ClockLoader color={"#61dafb"} loading={loading} /> </div>}
+            </div>
           </div>
           <ul className="Todo-list" id="Todo">
             {todoList.length > 0 ? todoList.map(todoItem => {
