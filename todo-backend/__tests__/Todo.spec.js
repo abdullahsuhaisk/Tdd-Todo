@@ -8,6 +8,7 @@ beforeEach(() => {
   // Clean TodoModel remove all data
 })
 
+// POST TODO
 it('returns 200 OK when add todo is valid', (done) => {
   request(app).post('/todo').send({
     todo: 'first todo'
@@ -16,9 +17,17 @@ it('returns 200 OK when add todo is valid', (done) => {
     done()
   })
 })
-// .expect(200,done)
 
-it('returns success mesage  when add todo is valid', (done) => {
+// GET TODO
+it('returns 404 when add todo request is get', (done) => {
+  request(app).get('/todo').then((response) => {
+    expect(response.status).toBe(404)
+    done()
+  })
+})
+
+// CHECK ADD TODO
+it('returns success message  when add todo is valid', (done) => {
   request(app).post('/todo').send({
     todo: 'first todo'
   }).then((response) => {
@@ -27,6 +36,7 @@ it('returns success mesage  when add todo is valid', (done) => {
   })
 })
 
+// CHECK TODO ADDED TO DATABASE
 it('save the todo to database', (done) => {
   request(app).post('/todo').send({
     todo: 'first todo'
@@ -38,6 +48,7 @@ it('save the todo to database', (done) => {
   })
 })
 
+// CHECK TODO SAVED CORRECTLY
 it('save the todo correctly to database', (done) => {
   request(app).post('/todo').send({
     todo: 'first todo'
