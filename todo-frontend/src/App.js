@@ -40,8 +40,8 @@ function App() {
             </div>
           </div>
           <ul className="Todo-list" id="Todo">
-            {todoList.length > 0 ? todoList.map(todoItem => {
-              return (<li>
+            {todoList.length > 0 ? todoList.map((todoItem, index) => {
+              return (<li key={index}>
                 {todoItem}
               </li>)
             }) : null}
