@@ -1,0 +1,28 @@
+version: "2"
+services:
+    todo-frontend:
+        image: client
+        restart: always
+        ports:
+            - "3000:3000"
+        working_dir: /todo-frontend/src/app
+        volumes:
+            - ./todo-frontend:/todo-frontend/src/app
+        entrypoint: ["npm", "start"]
+        links:
+            - api
+        networks:
+            - webappnetwork
+    todo-backend:
+        image: server
+        restart: always
+        ports:
+            - "3001:3001"
+        volumes:
+            - ./todo-backend:/todo-backend
+            - /todo-backend/node_modules
+        networks:
+            - webappnetwork
+networks:
+    webappnetwork:
+        driver: bridge
