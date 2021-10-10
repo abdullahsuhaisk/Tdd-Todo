@@ -26,13 +26,13 @@ const {
 const assert = require("assert");
 const headless = process.env.headless_chrome.toLowerCase() === 'true';
 
-beforeSuite(async () => {
+beforeScenario(async () => {
     await openBrowser({
         headless: headless
     })
 });
 
-afterSuite(async () => {
+afterScenario(async () => {
     await closeBrowser();
 });
 
@@ -108,7 +108,7 @@ step("I should see <arg0> item in Todo list", async function(arg0) {
 step("Empty <arg0> list", async function(arg0) {
     // var listElement = await $(arg0).elements().length
     var listElement = await listItem({id:arg0})
-    // console.log(listElement)
+  
 
     assert.ok(listElement.exists, false)
 });
