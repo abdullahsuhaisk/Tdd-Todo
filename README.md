@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img alt="logo" src="https://github.com/abdullahsuhaisk/Tdd-Todo/blob/main/assets/readMegif.gif" width="300" heigth="200" />
+  <img alt="logo" src="https://github.com/abdullahsuhaisk/Tdd-Todo/tree/master/assets/readMegif.gif" />
 </h2>
 
 ---
@@ -35,7 +35,7 @@ The project was developed using the following technologies:
 - [Node v10+](https://nodejs.org/en/docs/)
 - [NPM](https://www.npmjs.com/) or [Yarn](https://classic.yarnpkg.com/en/docs/).
 - [Docker](https://www.docker.com/)
-- 
+
 ## :beginner: Getting Started
 
 <b>Cloning the repository:</b>
