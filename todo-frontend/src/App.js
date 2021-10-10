@@ -14,7 +14,7 @@ function App() {
   async function addTodoBackend(todoParam) {
     setLoading(true)
     try {
-      const response = await axios.post(`${URL}/todo`, { todo: todoParam })
+      const response = await axios.post(`${URL}todo`, { todo: todoParam })
       const { data: { id, message } } = response
       alert(`${message} your todo is : ${todo}`)
       setLoading(false)

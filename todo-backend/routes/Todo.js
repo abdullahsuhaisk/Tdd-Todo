@@ -9,7 +9,6 @@ router.post('/', async (req, res) => {
   })
   try {
     const savedTodo = await todo.save();
-    // res.json(savedTodo,{message: "todo added"})
     res.status(200).send({message: "todo added", id:savedTodo._id})
   } catch (error) {
     console.log(error)
