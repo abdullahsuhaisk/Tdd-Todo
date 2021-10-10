@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img alt="logo" src="https://github.com/abdullahsuhaisk/Tdd-Todo/tree/master/assets/readMegif.gif" />
+  <img alt="logo" src="https://github.com/abdullahsuhaisk/Tdd-Todo/blob/master/assets/readMegif.gif?raw=true" />
 </h2>
 
 ---
