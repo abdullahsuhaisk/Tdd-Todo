@@ -6,9 +6,11 @@ const cors = require('cors');
 
 const todoRoute = require('./routes/Todo')
 
+const MONGO_CONNECTION = "mongodb+srv://dbAdmin:199393@cluster0.hr6tc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 const app = express();
 
-mongoose.connect("mongodb+srv://dbAdmin:199393@cluster0.hr6tc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true}, async (err,db) => {
+mongoose.connect(MONGO_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true}, async (err,db) => {
   if(!err) {
       console.log('connected to DB')
   } else {
