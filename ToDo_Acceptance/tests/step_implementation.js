@@ -95,13 +95,13 @@ step("Must have <table>", async function (table) {
 
 step("I write <arg0> to <arg1> and click to <arg2>", async function (arg0, arg1, arg2) {
     await write(arg0, into(textBox()));
-    alert('todo added your todo is : buy some milk', async () => await accept())
+    alert(`todo added your todo is : ${arg0}`, async () => await accept())
     await click(button({ id: arg2 }));
 
 });
 
 
-step("I should see <arg0> item in <arg1> list", async function(arg0, arg1) {
+step("I should see <arg0> item in Todo list", async function(arg0) {
     assert.ok(await text(arg0).exists(0, 0));
 });
 

@@ -7,5 +7,5 @@ Given Empty ToDo list
 
 *Empty "Todo" list
 *I write "buy some milk" to "textBox" and click to "addButton"
-*I should see "buy some milk" item in "Todo" list
+*I should see "buy some milk" item in Todo list
 
