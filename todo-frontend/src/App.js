@@ -9,10 +9,12 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const URL = "http://localhost:3001/"
+
   async function addTodoBackend(todoParam) {
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:3001/todo', { todo: todoParam })
+      const response = await axios.post(`${URL}/todo`, { todo: todoParam })
       const { data: { id, message } } = response
       alert(`${message} your todo is : ${todo}`)
       setLoading(false)
