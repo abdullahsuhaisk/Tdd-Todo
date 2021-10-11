@@ -4,8 +4,10 @@ const TodoModel = require('../Models/TodoModel');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
+  console.log(req.body)
   const todo = new TodoModel({
-    todo: req.body.todo
+    duty: req.body.duty,
+    done: req.body.done
   })
   try {
     const savedTodo = await todo.save();

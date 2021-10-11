@@ -14,7 +14,8 @@ describe('Todo posting routes and Db tests', () => {
   // POST TODO
   it('returns 200 OK when add todo is valid',async () => {
     request(app).post('/todo').send({
-      todo: 'first todo'
+      duty: 'first todo',
+      done: false
     }).then((response) => {
       expect(response.status).toBe(200)
     })
@@ -39,7 +40,7 @@ describe('Todo posting routes and Db tests', () => {
   // CHECK ADD TODO
   it('returns success message  when add todo is valid',async () => {
     request(app).post('/todo').send({
-      todo: 'first todo'
+      duty: 'first todo'
     }).then((response) => {
       expect(response.body.message).toBe("todo added")
 
@@ -49,7 +50,7 @@ describe('Todo posting routes and Db tests', () => {
   // CHECK TODO ADDED TO DATABASE
   it('save the todo to database', (done) => {
     request(app).post('/todo').send({
-      todo: 'first todo'
+      duty: 'first todo'
     }).then((res) => {
       TodoModel.findOne({ _id: res.body.id }).then(todo => {
         expect(todo)
@@ -61,10 +62,10 @@ describe('Todo posting routes and Db tests', () => {
   // CHECK TODO SAVED CORRECTLY
   it('save the todo correctly to database', (done) => {
     request(app).post('/todo').send({
-      todo: 'first todo'
+      duty: 'first todo'
     }).then((res) => {
       TodoModel.findOne({ _id: res.body.id }).then((todo) => {
-        expect(todo.todo).toEqual('first todo')
+        expect(todo.duty).toEqual('first todo')
         done()
       })
     })
