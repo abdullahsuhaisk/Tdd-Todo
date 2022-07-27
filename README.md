@@ -1,7 +1,7 @@
 <h1 align="center"> Modanisa Test-Driven-Development Todo Challenge
 </h1>
 <h2 align="center">
-  <img alt="logo" src="https://github.com/abdullahsuhaisk/Tdd-Todo/blob/master/assets/readMegif.gif?raw=true" />
+  <img alt="logo" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
 </h2>
 
 ---
